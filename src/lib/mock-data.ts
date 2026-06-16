@@ -1,0 +1,246 @@
+import sweater from "@/assets/item-sweater.jpg";
+import denim from "@/assets/item-denim.jpg";
+import hoodie from "@/assets/item-hoodie.jpg";
+import tote from "@/assets/item-tote.jpg";
+import shirt from "@/assets/item-shirt.jpg";
+import sneakers from "@/assets/item-sneakers.jpg";
+
+import catTshirts from "@/assets/cat-tshirts.jpg";
+import catHoodies from "@/assets/cat-hoodies.jpg";
+import catJackets from "@/assets/cat-jackets.jpg";
+import catPants from "@/assets/cat-pants.jpg";
+import catShoes from "@/assets/cat-shoes.jpg";
+import catAccessories from "@/assets/cat-accessories.jpg";
+
+// Re-export StoredItem as the canonical Item type for the app
+export type { StoredItem as Item } from "./store";
+
+export const categories = [
+  { slug: "t-shirts", name: "T-Shirts", count: 412, image: catTshirts },
+  { slug: "hoodies", name: "Hoodies", count: 286, image: catHoodies },
+  { slug: "jackets", name: "Jackets", count: 198, image: catJackets },
+  { slug: "pants", name: "Pants", count: 354, image: catPants },
+  { slug: "shoes", name: "Shoes", count: 221, image: catShoes },
+  { slug: "accessories", name: "Accessories", count: 309, image: catAccessories },
+];
+
+export const SYSTEM_OWNER_ID = "system";
+
+export const seedItems = [
+  {
+    id: "1",
+    title: "Cream Cable Knit Sweater",
+    brand: "Everlane",
+    category: "Hoodies",
+    condition: "Like New" as const,
+    size: "M",
+    gender: "Women" as const,
+    location: "Brooklyn, NY",
+    sustainabilityScore: 92,
+    image: sweater,
+    images: [sweater, sweater, sweater],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Maya R.",
+      initials: "MR",
+      memberSince: "2024-01",
+      exchangeCount: 14,
+      avatarColor: "#7FA35B",
+    },
+    description:
+      "This cable knit sweater from Everlane is incredibly soft and barely worn — maybe 3 times total. It's a beautiful cream colour that pairs with almost anything. Stored in a smoke-free, pet-free home. Photographed in natural light. Happy to swap for similar quality knitwear in size S–M.",
+    pointValue: 85,
+    listedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 3,
+    isAvailable: true,
+  },
+  {
+    id: "2",
+    title: "Vintage Indigo Denim Jacket",
+    brand: "Levi's",
+    category: "Jackets",
+    condition: "Excellent" as const,
+    size: "L",
+    gender: "Unisex" as const,
+    location: "Austin, TX",
+    sustainabilityScore: 88,
+    image: denim,
+    images: [denim, denim, denim],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Jordan K.",
+      initials: "JK",
+      memberSince: "2023-09",
+      exchangeCount: 22,
+      avatarColor: "#3F6B37",
+    },
+    description:
+      "Classic Levi's 505 denim jacket in a deep indigo wash. This one has excellent character — subtle fading at the collar and cuffs that gives it that authentic vintage look without being worn out. No rips, tears, or stains. Would love to swap for a quality jacket or coat.",
+    pointValue: 90,
+    listedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 7,
+    isAvailable: true,
+  },
+  {
+    id: "3",
+    title: "Olive Oversized Hoodie",
+    brand: "Uniqlo",
+    category: "Hoodies",
+    condition: "Good" as const,
+    size: "M",
+    gender: "Unisex" as const,
+    location: "Portland, OR",
+    sustainabilityScore: 81,
+    image: hoodie,
+    images: [hoodie, hoodie, hoodie],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Sam L.",
+      initials: "SL",
+      memberSince: "2024-03",
+      exchangeCount: 8,
+      avatarColor: "#C2A878",
+    },
+    description:
+      "Uniqlo oversized hoodie in a muted olive green — one of their older colourways that's hard to find now. Slight pilling on the inner lining but barely noticeable when wearing. Super cosy and great for layering. Looking to swap for a similar oversized piece.",
+    pointValue: 70,
+    listedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 2,
+    isAvailable: true,
+  },
+  {
+    id: "4",
+    title: "Natural Canvas Tote Bag",
+    brand: "Baggu",
+    category: "Accessories",
+    condition: "Like New" as const,
+    size: "One Size",
+    gender: "Unisex" as const,
+    location: "Seattle, WA",
+    sustainabilityScore: 95,
+    image: tote,
+    images: [tote, tote, tote],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Ari P.",
+      initials: "AP",
+      memberSince: "2023-11",
+      exchangeCount: 31,
+      avatarColor: "#5AA469",
+    },
+    description:
+      "Baggu standard tote in natural canvas — used exactly twice and it still looks brand new. These things are incredibly durable and hold more than you'd expect. Happy to donate this one to a good home — just cover with a swap of any small accessory.",
+    pointValue: 65,
+    listedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 5,
+    isAvailable: true,
+  },
+  {
+    id: "5",
+    title: "Off-White Linen Button-Up",
+    brand: "COS",
+    category: "T-Shirts",
+    condition: "Excellent" as const,
+    size: "S",
+    gender: "Women" as const,
+    location: "Chicago, IL",
+    sustainabilityScore: 87,
+    image: shirt,
+    images: [shirt, shirt, shirt],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Nina T.",
+      initials: "NT",
+      memberSince: "2024-02",
+      exchangeCount: 11,
+      avatarColor: "#A8B89C",
+    },
+    description:
+      "COS linen shirt in a beautiful off-white. Worn maybe 4 times, always hand-washed and air-dried. Linen gets better with wear and this one has that perfect natural texture. A timeless wardrobe staple. Would swap for another COS or similar quality top.",
+    pointValue: 80,
+    listedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 4,
+    isAvailable: true,
+  },
+  {
+    id: "6",
+    title: "Minimal Cream Low-Top Sneakers",
+    brand: "Veja",
+    category: "Shoes",
+    condition: "Good" as const,
+    size: "9",
+    gender: "Unisex" as const,
+    location: "San Francisco, CA",
+    sustainabilityScore: 90,
+    image: sneakers,
+    images: [sneakers, sneakers, sneakers],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Theo D.",
+      initials: "TD",
+      memberSince: "2023-07",
+      exchangeCount: 19,
+      avatarColor: "#6B8F71",
+    },
+    description:
+      "Veja V-10 sneakers in cream/white. These are sustainably made and still in great shape — soles are solid, uppers are clean. There are very minor scuffs on the toe box that cleaned up well. Comes with original laces and box. Would love to swap for quality footwear.",
+    pointValue: 95,
+    listedAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 6,
+    isAvailable: true,
+  },
+  {
+    id: "7",
+    title: "Slim Beige Chinos",
+    brand: "Everlane",
+    category: "Pants",
+    condition: "Excellent" as const,
+    size: "32",
+    gender: "Men" as const,
+    location: "Denver, CO",
+    sustainabilityScore: 84,
+    image: shirt,
+    images: [shirt, shirt, shirt],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Owen B.",
+      initials: "OB",
+      memberSince: "2024-04",
+      exchangeCount: 6,
+      avatarColor: "#8AAE6B",
+    },
+    description:
+      "Everlane slim chinos in warm beige. These fit true to size and the fabric is that perfect mid-weight that works year-round. Some light wear at the knees but nothing visible when standing. Machine washed cold every time. Would swap for another pair of quality trousers.",
+    pointValue: 75,
+    listedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 1,
+    isAvailable: true,
+  },
+  {
+    id: "8",
+    title: "Wool Cable Pullover",
+    brand: "Patagonia",
+    category: "Hoodies",
+    condition: "Like New" as const,
+    size: "L",
+    gender: "Men" as const,
+    location: "Boulder, CO",
+    sustainabilityScore: 93,
+    image: sweater,
+    images: [sweater, sweater, sweater],
+    owner: {
+      id: SYSTEM_OWNER_ID,
+      name: "Eli M.",
+      initials: "EM",
+      memberSince: "2023-05",
+      exchangeCount: 27,
+      avatarColor: "#4A7C59",
+    },
+    description:
+      "Patagonia recycled wool cable pullover — basically new. Received as a gift but it's not quite my style. The wool is incredibly warm and the cable knit pattern is beautiful. Sustainably sourced materials. Would love to swap for an outdoor jacket or technical layer.",
+    pointValue: 110,
+    listedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+    exchangeCount: 9,
+    isAvailable: true,
+  },
+];

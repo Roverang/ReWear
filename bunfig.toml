@@ -1,0 +1,9 @@
+[install]
+minimumReleaseAge = 86400
+minimumReleaseAgeExcludes = ["@lovable.dev/vite-tanstack-config", "@lovable.dev/mcp-js"]
+
+# Skip SSL verification (needed for environments with custom corporate SSL certs)
+[install.scopes]
+
+[network]
+tls = { rejectUnauthorized = false }
