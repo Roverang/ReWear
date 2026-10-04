@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: rewear-postgres
+    # Only the postgres variables reach the container. Values are substituted by compose:
+    #   docker compose --env-file backend.env up -d
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?run with --env-file backend.env}
+      POSTGRES_USER: ${POSTGRES_USER:?run with --env-file backend.env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?run with --env-file backend.env}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - rewear-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  rewear-pgdata:

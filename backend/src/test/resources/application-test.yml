@@ -1,0 +1,12 @@
+# Test profile: in-memory H2 in PostgreSQL mode. Flyway runs the real migrations,
+# then Hibernate validates the entities against them.
+spring:
+  datasource:
+    url: jdbc:h2:mem:rewear;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+app:
+  jwt:
+    # Test-only key (base64 of a fixed public string). Not used anywhere else.
+    secret: dGVzdC1vbmx5LWp3dC1rZXktbm90LWEtc2VjcmV0LTAxMjM0NTY3ODk=

@@ -1,0 +1,33 @@
+# All secrets come from environment variables. No real values belong in this file.
+spring:
+  application:
+    name: rewear-backend
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+server:
+  port: 8081
+  error:
+    include-stacktrace: never
+    include-message: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 24h
+  cors:
+    allowed-origin: ${FRONTEND_ORIGIN:http://localhost:8080}

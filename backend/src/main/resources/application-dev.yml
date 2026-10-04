@@ -1,0 +1,11 @@
+# Local development profile: run with -Dspring-boot.run.profiles=dev
+spring:
+  config:
+    # Reads DB_URL, JWT_SECRET, ... from the git-ignored backend.env at the repo root
+    # (works whether the app starts from the repo root or from backend/).
+    import: "optional:file:./backend.env[.properties],optional:file:../backend.env[.properties]"
+
+app:
+  demo:
+    email: demo@rewear.app
+    password: ${DEMO_PASSWORD:rewear-demo-123}
